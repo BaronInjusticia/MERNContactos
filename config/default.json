@@ -1,0 +1,5 @@
+{
+    "mongoURI": "mongodb+srv://Admin:123abc@contactosmern-eyrpm.mongodb.net/test?retryWrites=true&w=majority",
+
+    "jwtSecret": "alojomora-no-es-la-respuesta"
+}
