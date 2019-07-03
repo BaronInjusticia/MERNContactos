@@ -1,11 +1,11 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
-const { check, validationResult } = require('express-validator/check');
+const { check, validationResult } = require('express-validator');
 const auth = require('../middleware/auth');
 const bcrypt = require('bcryptjs');
 const config = require('config');
 
-const User = require('../modules/User');
+const User = require('../models/User');
 
 const router = express.Router();
 
@@ -28,7 +28,7 @@ router.get('/', auth, async (req, res) => {
 router.post(
   '/',
   [
-    check('email', 'Incluye un email vlaido').isEmail(),
+    check('email', 'Incluye un email valido').isEmail(),
     check('password', 'una constraseña es requerida').exists()
   ],
   async (req, res) => {
